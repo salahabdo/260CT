@@ -1,0 +1,46 @@
+KELLY'S DATABASE FOR 260, FIRST EDITION 
+Instructions for use: 
+1. Open Oracle 11g with SQL+ (Mylaunch) 
+2. Clear your SQL database of 220 work
+3. Copy and paste everything from below this line
+4. Use items from below the second line to test code 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE Customer_Details(
+ID int PRIMARY KEY,
+FORENAME VARCHAR(30), 
+SURNAME VARCHAR(30), 
+DOB VARCHAR(10),
+CUSTOMER_EXPRIENCE varchar(10),
+ACCOUNT_STATUS varchar (10)
+); 
+
+CREATE TABLE User_Names(
+Username varchar(20) PRIMARY KEY, 
+Password varchar(20), 
+ID int NOT NULL UNIQUE
+); 
+
+INSERT INTO Customer_Details(ID, FORENAME, SURNAME, DOB, CUSTOMER_EXPRIENCE, ACCOUNT_STATUS) VALUES (00001, 'Bob', 'Jones', '01/01/1968', 'Novice', 'Free'); 
+INSERT INTO Customer_Details(ID, FORENAME, SURNAME, DOB, CUSTOMER_EXPRIENCE, ACCOUNT_STATUS) VALUES (00002, 'Indrick', 'Boreal', '10/10/1894', 'Standard', 'Paid');
+INSERT INTO Customer_Details(ID, FORENAME, SURNAME, DOB, CUSTOMER_EXPRIENCE, ACCOUNT_STATUS) VALUES (00003, 'Mark', 'Fisc', '22/12/1990', 'Novice', 'Paid');
+INSERT INTO Customer_Details(ID, FORENAME, SURNAME, DOB, CUSTOMER_EXPRIENCE, ACCOUNT_STATUS) VALUES (00004, 'Bob', 'Jones', '15/12/1999', 'Novice', 'Free');
+INSERT INTO Customer_Details(ID, FORENAME, SURNAME, DOB, CUSTOMER_EXPRIENCE, ACCOUNT_STATUS) VALUES (00005, 'Kai', 'Rango', '12/11/1949', 'Standard', 'Free');
+
+INSERT INTO User_Names(Username, Password, ID) VALUES ('Bob', 'Password', 00001);
+INSERT INTO User_Names(Username, Password, ID) VALUES ('DOW3', 'Lmaol', 00002);
+INSERT INTO User_Names(Username, Password, ID) VALUES ('Marki', 'Pliars', 00003);
+INSERT INTO User_Names(Username, Password, ID) VALUES ('Bob2', 'Password', 00004);
+INSERT INTO User_Names(Username, Password, ID) VALUES ('Kaidan',  'SQLSUCKS', 00005);
+
+ALTER TABLE Customer_Details
+ADD CONSTRAINT fk_ID
+FOREIGN KEY (ID) 
+REFERENCES User_Names(ID)
+;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Set lines 256; 
+Select * From Customer_Details;
+Select * From User_Names;
