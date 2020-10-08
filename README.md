@@ -1,4 +1,4 @@
-# 260CT-Group
+# 260CT-Group (Sphere Booking and Check-in (SBC) System Introduction)
 
 Group Members:
 •	Salah Abdo
